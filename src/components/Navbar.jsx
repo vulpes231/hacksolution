@@ -23,7 +23,7 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <header className="p-6 bg-slate-950 text-slate-100">
+    <header className="p-6 bg-slate-950 text-slate-100 fixed w-full top-0">
       <nav className="flex items-center justify-between lg:max-w-[980px] lg:mx-auto">
         <span>
           <h1 className="font-bold capitalize text-lg">hacking solution</h1>
