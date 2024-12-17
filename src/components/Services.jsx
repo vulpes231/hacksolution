@@ -52,9 +52,11 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="bg-slate-900 text-slate-100 p-6">
+    <div id="services" className="bg-slate-900 text-slate-100 p-6">
       <div className="lg:max-w-[980px] lg:mx-auto">
-        <h3 className="uppercase p-6 font-bold">what we do</h3>
+        <h2 className="text-3xl font-semibold text-center mb-12">
+          Our Services
+        </h2>
 
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {services.map((srv, index) => {
@@ -82,7 +84,7 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col gap-4 bg-slate-950 p-6 items-center justify-center rounded-lg text-center"
+                className="flex flex-col gap-4 bg-slate-950 p-6 items-center justify-center rounded-lg text-center border border-slate-700"
               >
                 <span>{icon}</span>
                 <span className="capitalize text-slate-400 text-sm">{srv}</span>

@@ -4,7 +4,10 @@ import { hero } from "../assets/images";
 
 const Hero = () => {
   return (
-    <div className="w-full text-slate-100 p-6 flex flex-col gap-6 items-center md:flex-row md:justify-between lg:max-w-[980px] lg:mx-auto pt-24">
+    <div
+      id="home"
+      className="w-full text-slate-100 p-6 flex flex-col gap-6 items-center md:flex-row md:justify-between lg:max-w-[980px] lg:mx-auto pt-24"
+    >
       <div className="flex flex-col gap-4 w-full">
         <h2 className="text-3xl lg:text-5xl font-bold ">
           Unlock Your Digital Potential

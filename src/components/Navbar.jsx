@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { MdMenu } from "react-icons/md";
+import { Link } from "react-scroll";
 
 const navLinks = [
   {
@@ -9,11 +10,11 @@ const navLinks = [
   },
   {
     id: 2,
-    name: "about",
+    name: "services",
   },
   {
     id: 3,
-    name: "services",
+    name: "about",
   },
   {
     id: 4,
@@ -32,9 +33,16 @@ const Navbar = () => {
           <ul className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => {
               return (
-                <li className="capitalize text-md font-medium" key={link.id}>
+                <Link
+                  className="capitalize text-md font-medium"
+                  key={link.id}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  to={link.name}
+                >
                   {link.name}
-                </li>
+                </Link>
               );
             })}
           </ul>
