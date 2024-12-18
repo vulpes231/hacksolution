@@ -5,5 +5,6 @@ import lotfi from "./lotfi.png";
 import mirjam from "./mirjam.png";
 import chet from "./chet.png";
 import bony from "./bony.png";
+import logo from "./hskl.png";
 
-export { hero, blake, christos, lotfi, mirjam, chet, bony };
+export { hero, blake, christos, lotfi, mirjam, chet, bony, logo };

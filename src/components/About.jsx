@@ -8,7 +8,9 @@ const About = () => {
       className="bg-black text-slate-400 p-6 lg:p-20 leading-10 tracking-wide"
     >
       <div className=" lg:max-w-[980px] lg:mx-auto flex flex-col gap-6">
-        <h2 className="text-3xl font-semibold text-center mb-12">About us</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-slate-100">
+          About us
+        </h2>
         <p>
           We are recognized globally for having the highest success rate in
           recovering lost cryptocurrency and funds. Our team consists of experts

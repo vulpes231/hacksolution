@@ -6,7 +6,7 @@ import { MdSupportAgent } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-slate-100 p-10">
+    <footer className="bg-black text-slate-100 p-10 border-t border-slate-800">
       <div className="lg:max-w-[980px] lg:mx-auto flex flex-col gap-4 items-center justify-centerz">
         <small>&copy; 2024 Hacking Solution. All Rights Reserved</small>
         <span className="flex items-center gap-6">

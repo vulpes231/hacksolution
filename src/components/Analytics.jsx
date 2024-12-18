@@ -28,7 +28,7 @@ const data = [
 const Analytics = () => {
   return (
     <div className="bg-black text-slate-100 p-6 lg:p-20">
-      <div className="grid lg:grid-cols-3 gap-16 lg:max-w-[980px] lg:mx-auto">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16 lg:max-w-[980px] lg:mx-auto">
         {data.map((dt) => {
           const icon =
             dt.id === "experience" ? (
