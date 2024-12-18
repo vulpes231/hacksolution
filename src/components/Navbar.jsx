@@ -26,7 +26,7 @@ const navLinks = [
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <header className="p-6 bg-slate-950 text-slate-100 fixed w-full top-0 border-b border-slate-800">
+    <header className="p-6 bg-slate-950 text-slate-100 fixed w-full top-0 border-b border-slate-800 z-10">
       <nav className="flex items-center justify-between lg:max-w-[980px] lg:mx-auto">
         <span className="flex gap-1 items-center">
           <img src={logo} alt="" className="w-[25px]" />

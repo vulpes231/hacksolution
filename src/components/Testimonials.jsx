@@ -51,7 +51,7 @@ const Testimonials = () => {
       setCurrentBatch(
         (prevBatch) => (prevBatch + 1) % Math.ceil(testimonials.length / 3)
       );
-    }, 10000); // Change every 10 seconds
+    }, 5000); // Change every 10 seconds
 
     return () => clearInterval(interval); // Clean up the interval when the component is unmounted
   }, []);
@@ -63,7 +63,7 @@ const Testimonials = () => {
   );
 
   return (
-    <div className="bg-slate-900 text-slate-100 py-16 px-4">
+    <div className="bg-slate-900 text-slate-100 py-16 px-4 z-1">
       <h2 className="text-3xl font-semibold text-center mb-12">
         What Our Clients Say
       </h2>
@@ -85,7 +85,7 @@ const Testimonials = () => {
           return (
             <div
               key={index}
-              className="bg-slate-950 p-6 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer border border-slate-700 flex items-center justify-center flex-col gap-4"
+              className="bg-slate-950 p-6 rounded-lg shadow-lg transition-all duration-300 hover:scale-100 hover:shadow-xl cursor-pointer border border-slate-700 flex items-center justify-center flex-col gap-4"
             >
               <figure className="bg-white w-[100px] h-[100px] rounded-full flex items-center justify-center">
                 <img src={img} alt="image" className="w-full" />
