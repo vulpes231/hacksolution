@@ -23,7 +23,7 @@ const Testimonials = () => {
         "I can't thank them enough for their efforts in helping me recover my assets. They were knowledgeable and efficient, and I highly recommend them to anyone who has been scammed.",
     },
     {
-      name: "Alice Williams",
+      name: "Jesse Williams",
       title: "Marketing Specialist",
       testimony:
         "I had doubts about recovering my lost funds, but after working with this company, I am beyond impressed. The recovery process was smooth, and they were always available for questions.",
@@ -32,7 +32,7 @@ const Testimonials = () => {
       name: "Salam Marrakesh",
       title: "Artist",
       testimony:
-        "Saved me from future heartbreak. I still can't thank this team enough. very detailed in their return informations.",
+        "I made the right choice when i decided to contact the HACKING SOLUTION,i wanted to spy's through my spouse device. I have been able to achieve this with their help.",
     },
     {
       name: "Chette Kuame",
@@ -79,7 +79,7 @@ const Testimonials = () => {
             ? chet
             : testimonial.name.includes("Salam")
             ? lotfi
-            : testimonial.name.includes("Alice")
+            : testimonial.name.includes("Jesse")
             ? mirjam
             : null;
           return (

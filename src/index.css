@@ -8,3 +8,13 @@
   background-image: url("/att.png");
   background-size: cover;
 }
+
+.serv {
+  background-image: url("/team.jpg");
+  background-size: cover;
+}
+.cont {
+  background-image: url("/cont.jpg");
+  background-size: cover;
+  opacity: 0.1;
+}

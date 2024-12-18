@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
 import { Link } from "react-scroll";
 import { logo } from "../assets/images";
+import { Link as CustomLink } from "react-router-dom";
 
 const navLinks = [
   {
@@ -28,10 +29,10 @@ const Navbar = () => {
   return (
     <header className="p-6 bg-slate-950 text-slate-100 fixed w-full top-0 border-b border-slate-800 z-10">
       <nav className="flex items-center justify-between lg:max-w-[980px] lg:mx-auto">
-        <span className="flex gap-1 items-center">
+        <CustomLink to={"/"} className="flex gap-1 items-center">
           <img src={logo} alt="" className="w-[25px]" />
           <h1 className="font-bold capitalize text-lg">hacking solution</h1>
-        </span>
+        </CustomLink>
         <div className="flex items-center gap-6">
           <ul className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => {

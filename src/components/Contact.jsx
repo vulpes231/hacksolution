@@ -75,9 +75,9 @@ const Contact = () => {
     return () => clearTimeout(timeout);
   }, [success]);
   return (
-    <div id="contact" className="bg-black text-slate-100 p-6 lg:p-20">
-      <div className="flex flex-col md:flex-row-reverse gap-6 md:gap-2 lg:max-w-[980px] lg:mx-auto">
-        <form action="" className="flex flex-col gap-4 w-full">
+    <div id="contact" className="bg-black text-slate-100 p-6 lg:p-20  ">
+      <div className="flex flex-col md:flex-row-reverse gap-6 md:gap-2 lg:max-w-[980px] lg:mx-auto z-50">
+        <form action="" className="flex flex-col gap-4 w-full ">
           <h2 className="text-3xl font-semibold text-center mb-12">
             Contact Us
           </h2>
