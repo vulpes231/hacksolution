@@ -88,7 +88,7 @@ const Services = () => {
               >
                 <span>{icon}</span>
                 <span className="capitalize text-slate-400 text-sm">{srv}</span>
-                <Link className="p-2 bg-cyan-700  rounded-sm text-xs">
+                <Link className="p-2 bg-white text-slate-800 rounded-sm text-xs">
                   Learn more
                 </Link>
               </div>

@@ -34,7 +34,7 @@ const Navbar = () => {
             {navLinks.map((link) => {
               return (
                 <Link
-                  className="capitalize text-md font-medium"
+                  className="capitalize text-md font-medium cursor-pointer hover:text-cyan-500"
                   key={link.id}
                   spy={true}
                   smooth={true}

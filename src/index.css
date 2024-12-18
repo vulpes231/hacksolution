@@ -5,7 +5,6 @@
 @tailwind utilities;
 
 .bgImg {
-  background-image: url("/hck.jpg");
+  background-image: url("/att.png");
   background-size: cover;
-  height: 400px;
 }

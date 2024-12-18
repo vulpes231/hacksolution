@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
+import { blake, bony, chet, christos, lotfi, mirjam } from "../assets/images";
 
 const Testimonials = () => {
   const testimonials = [
@@ -67,23 +68,38 @@ const Testimonials = () => {
         What Our Clients Say
       </h2>
       <div className="max-w-[980px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {currentTestimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className="bg-slate-950 p-6 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer border border-slate-700"
-          >
-            <figure>
-              <img src="" alt="image" className="w-[30px]" />
-            </figure>
-            <small className="italic text-sm mb-4 text-slate-200">
-              {testimonial.testimony}
-            </small>
-            <div className="mt-6 text-center">
-              <h3 className="font-bold text-xl">{testimonial.name}</h3>
-              <p className="text-slate-400">{testimonial.title}</p>
+        {currentTestimonials.map((testimonial, index) => {
+          const img = testimonial.name.includes("Jimmy")
+            ? blake
+            : testimonial.name.includes("Chloe")
+            ? bony
+            : testimonial.name.includes("Robert")
+            ? christos
+            : testimonial.name.includes("Chette")
+            ? chet
+            : testimonial.name.includes("Salam")
+            ? lotfi
+            : testimonial.name.includes("Alice")
+            ? mirjam
+            : null;
+          return (
+            <div
+              key={index}
+              className="bg-slate-950 p-6 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer border border-slate-700 flex items-center justify-center flex-col gap-4"
+            >
+              <figure className="bg-white w-[100px] h-[100px] rounded-full flex items-center justify-center">
+                <img src={img} alt="image" className="w-full" />
+              </figure>
+              <small className="italic text-sm mb-4 text-slate-200">
+                {testimonial.testimony}
+              </small>
+              <div className="mt-2 text-center">
+                <h3 className="font-bold text-xl">{testimonial.name}</h3>
+                <p className="text-slate-400">{testimonial.title}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
