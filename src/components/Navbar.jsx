@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import { MdMenu } from "react-icons/md";
+import React, { useState } from "react";
+import { MdClose, MdMenu } from "react-icons/md";
 import { Link } from "react-scroll";
 import { logo } from "../assets/images";
 
@@ -24,8 +24,9 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
   return (
-    <header className="p-6 bg-slate-950 text-slate-100 fixed w-full top-0">
+    <header className="p-6 bg-slate-950 text-slate-100 fixed w-full top-0 border-b border-slate-800">
       <nav className="flex items-center justify-between lg:max-w-[980px] lg:mx-auto">
         <span className="flex gap-1 items-center">
           <img src={logo} alt="" className="w-[25px]" />
@@ -48,9 +49,39 @@ const Navbar = () => {
               );
             })}
           </ul>
-          <span className="lg:hidden">
-            <MdMenu className="w-6 h-6 font-medium" />
+          <span
+            onClick={() => setToggle((prev) => !prev)}
+            className="lg:hidden"
+          >
+            {!toggle ? (
+              <MdMenu className="w-6 h-6 font-medium cursor-pointer" />
+            ) : (
+              <MdClose className="w-6 h-6 font-medium cursor-pointer" />
+            )}
           </span>
+          <div
+            className={
+              toggle
+                ? "flex flex-col bg-slate-950 absolute top-[77px] right-1 w-[250px] border border-slate-700 p-6 gap-4"
+                : "hidden"
+            }
+          >
+            {navLinks.map((link) => {
+              return (
+                <Link
+                  className="capitalize text-md font-medium cursor-pointer hover:text-cyan-500"
+                  key={link.id}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  to={link.name}
+                  onClick={() => setToggle(false)}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </nav>
     </header>
