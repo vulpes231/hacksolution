@@ -21,6 +21,7 @@ const myservices = [
     info: "We will help you spy and monitor any targeted cell phones remotely without physical contact with the targeted device. You will have access to activities on the cell phones such as: ",
     features: [
       "Calls (Incoming and Outgoing calls)",
+      "Access to text messages (Incoming, Outgoing and deleted messages.)",
       "Eavesdrop call conversations",
       "Access to social media (WhatsApp, Facebook, Instagram...)",
       "Gallery- (current and deleted pictures, files, videos, Audio)",
@@ -160,7 +161,7 @@ const Details = () => {
       <div className="w-full lg:max-w-[980px] lg:mx-auto ">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center ">
           <div className="flex flex-col gap-6 w-full bg-slate-950 p-6 border border-slate-700 rounded-lg shadow-lg">
-            <h3 className="capitalize font-semibold text-lg md:text-xl text-cyan-400">
+            <h3 className="capitalize font-semibold text-lg md:text-xl ">
               {serviceDetail.title}
             </h3>
             <p className="text-sm text-slate-300 leading-7">
@@ -169,7 +170,7 @@ const Details = () => {
             <ul className="flex flex-col gap-4 list-disc pl-8 mt-4">
               {serviceDetail.features.map((ft, index) => (
                 <li
-                  className="ml-1 text-cyan-400 text-sm hover:text-cyan-500 transition-colors duration-200"
+                  className="ml-1  text-sm  transition-colors duration-200"
                   key={index}
                 >
                   {ft}
