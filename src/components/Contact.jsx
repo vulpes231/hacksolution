@@ -3,8 +3,11 @@
 import React, { useEffect, useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { customStyles } from "../constants/styles";
+import { useDispatch, useSelector } from "react-redux";
+import { resetSendMsg, sendMsg } from "../features/msgSlice";
 
 const Contact = () => {
+  const dispatch = useDispatch();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -12,8 +15,10 @@ const Contact = () => {
   });
 
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+
+  const { sendMsgLoading, sendMsgError, msgSent } = useSelector(
+    (state) => state.msg
+  );
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -25,34 +30,29 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
 
     if (!form.name) {
       setError("Enter your name!");
-      setLoading(false);
       return;
     }
     if (!form.email) {
       setError("Enter your email!");
-      setLoading(false);
       return;
     }
     if (!form.message) {
       setError("Enter your message!");
-      setLoading(false);
       return;
     }
 
-    console.log(form);
+    dispatch(sendMsg(form));
     setError("");
-
-    setForm({
-      name: "",
-      email: "",
-      message: "",
-    });
-    setSuccess(true);
   };
+
+  useEffect(() => {
+    if (sendMsgError) {
+      setError(sendMsgError);
+    }
+  }, [sendMsgError]);
 
   useEffect(() => {
     let timeout;
@@ -66,14 +66,18 @@ const Contact = () => {
 
   useEffect(() => {
     let timeout;
-    if (success) {
+    if (msgSent) {
       timeout = setTimeout(() => {
-        setLoading(false);
-        setSuccess(false);
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+        dispatch(resetSendMsg());
       }, 3000);
     }
     return () => clearTimeout(timeout);
-  }, [success]);
+  }, [msgSent, dispatch]);
   return (
     <div id="contact" className="bg-black text-slate-100 p-6 lg:p-20  ">
       <div className="flex flex-col md:flex-row-reverse gap-6 md:gap-2 lg:max-w-[980px] lg:mx-auto z-50">
@@ -89,6 +93,7 @@ const Contact = () => {
               onChange={handleInput}
               value={form.name}
               name="name"
+              autoComplete="off"
             />
           </div>
           <div className={customStyles.formHolder}>
@@ -99,6 +104,7 @@ const Contact = () => {
               onChange={handleInput}
               value={form.email}
               name="email"
+              autoComplete="off"
             />
           </div>
           <div className={customStyles.formHolder}>
@@ -112,13 +118,13 @@ const Contact = () => {
             ></textarea>
           </div>
           {error && <p className="text-red-500 text-xs">{error}</p>}
-          {success && <p className="text-green-500 text-xs">Message sent.</p>}
+          {msgSent && <p className="text-green-500 text-xs">Message sent.</p>}
           <button
             onClick={handleSubmit}
-            disabled={loading}
+            disabled={sendMsgLoading}
             className="bg-cyan-500 text-slate-100 p-2"
           >
-            {!loading ? "Send message" : "Sending message..."}
+            {!sendMsgLoading ? "Send message" : "Sending message..."}
           </button>
         </form>
         <div className="w-full flex flex-col items-center justify-center bg-slate-900 text-slate-400 p-6">
