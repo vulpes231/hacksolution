@@ -33,7 +33,7 @@ const Footer = () => {
         </span>
         <span className="flex items-center gap-2">
           <MdSupportAgent />
-          <small>hackingsolution2002@gmail.com</small>
+          <small>hacksolution2002@gmail.com</small>
         </span>
       </div>
     </footer>

@@ -127,13 +127,13 @@ const Contact = () => {
             {!sendMsgLoading ? "Send message" : "Sending message..."}
           </button>
         </form>
-        <div className="w-full flex flex-col items-center justify-center bg-slate-900 text-slate-400 p-6">
+        {/* <div className="w-full flex flex-col items-center justify-center bg-slate-900 text-slate-400 p-6">
           <MdEmail className="w-28 h-28" />
           <p className="text-center">
             If you have questions, or just want to get in touch use this form.
             We look forward to hearing from you.
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
