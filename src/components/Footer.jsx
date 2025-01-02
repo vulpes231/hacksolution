@@ -6,10 +6,11 @@ import { MdSupportAgent } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <footer className="bg-black text-slate-100 p-10 border-t border-slate-800">
       <div className="lg:max-w-[980px] lg:mx-auto flex flex-col gap-4 items-center justify-centerz">
-        <small>&copy; 2024 Hacking Solution. All Rights Reserved</small>
+        <small>&copy; {year} Hack Solution. All Rights Reserved</small>
         <span className="flex items-center gap-6">
           <Link
             to={

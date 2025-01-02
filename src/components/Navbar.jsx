@@ -31,7 +31,7 @@ const Navbar = () => {
       <nav className="flex items-center justify-between lg:max-w-[980px] lg:mx-auto">
         <CustomLink to={"/"} className="flex gap-1 items-center">
           <img src={logo} alt="" className="w-[25px]" />
-          <h1 className="font-bold capitalize text-lg">hacking solution</h1>
+          <h1 className="font-bold capitalize text-lg">hack solution</h1>
         </CustomLink>
         <div className="flex items-center gap-6">
           <ul className="hidden lg:flex items-center gap-6">
