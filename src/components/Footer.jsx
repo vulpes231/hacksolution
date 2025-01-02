@@ -20,7 +20,7 @@ const Footer = () => {
           >
             <FaInstagram className="w-7 h-7 text-pink-500" />
           </Link>
-          <Link to={""} target="_blank">
+          <Link to={"https://wa.me/2347044764884"} target="_blank">
             <FaWhatsapp className="w-7 h-7 text-green-500" />
           </Link>
           <Link
